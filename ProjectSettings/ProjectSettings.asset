@@ -607,7 +607,7 @@ PlayerSettings:
   facebookStatus: 1
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 6
   cloudProjectId: 8237c1c4-43b3-4098-b206-282b7106f382
   framebufferDepthMemorylessMode: 0
   projectName: Beat Saber Wannabe

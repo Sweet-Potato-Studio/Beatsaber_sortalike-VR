@@ -6,21 +6,25 @@ public class SpawnerHitbox : MonoBehaviour {
 
 	public GameObject[] cubes;
 	public Transform[] points;
-	public float beat;
-	private float timer;
 
-	// Use this for initialization
-	void Start () {
-		beat *= 2;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (timer > beat){
+    // Insert the song's BPM
+    public float beatPerMinute;
+
+    // Timer for time progression
+    private float timer;
+
+    void Start()
+    {
+        beatPerMinute /= 210;   
+    }
+
+    // Update is called once per frame
+    void Update () {
+		if (timer > beatPerMinute){
 			GameObject cube = Instantiate(cubes[Random.Range(0, 2)], points[Random.Range(0, 4)]);
 			cube.transform.localPosition = Vector3.zero;
 			cube.transform.Rotate(transform.forward, 90 * Random.Range(0, 4));
-			timer -= beat;
+			timer -= beatPerMinute;
 		}
 
 		timer += Time.deltaTime;
